@@ -12,8 +12,15 @@ public class GameSession {
     /**
      * Constructs a new GameSession with some players and questions
      */
-    public GameSession(ArrayList<Player> players, ArrayList<Question> questions) {
-        this.players = players;
+    public GameSession(ArrayList<String> players, ArrayList<Question> questions) {
+        this.players = createPlayerList(players);
+        this.questions = questions;
+        //Sets the amount of questions to the max. by default
+        maxGameLength = questions.size();
+    }
+
+    public GameSession(ArrayList<Question> questions) {
+        this.players = new ArrayList<Player>();
         this.questions = questions;
         //Sets the amount of questions to the max. by default
         maxGameLength = questions.size();
@@ -72,6 +79,19 @@ public class GameSession {
     public Boolean gameHasFinished() {
         return (getCurrentQuestionIndex() == questions.size())
                 || (currentQuestionIndex == maxGameLength);
+    }
+
+    public Player whosTurnIsIt() {
+        return players.get(0);
+    }
+
+    private ArrayList<Player> createPlayerList(ArrayList<String> names) {
+        ArrayList<Player> players = new ArrayList<Player>();
+        for (String name:
+             names) {
+            players.add(new Player(name));
+        }
+        return players;
     }
 
 }
