@@ -49,7 +49,7 @@ public class GameSession {
     public Question nextQuestion() {
         //TODO find a logical way to signal the end of the questions
         if (gameHasFinished())
-            return new Question("no more questions");
+            return new Question("Runde zu Ende!");
         Question thisQuestion = questions.get(currentQuestionIndex);
         currentQuestionIndex++;
 
