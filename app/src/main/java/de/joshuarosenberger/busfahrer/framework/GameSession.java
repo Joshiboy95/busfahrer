@@ -3,6 +3,7 @@ package de.joshuarosenberger.busfahrer.framework;
 import java.util.ArrayList;
 import java.util.Collections;
 
+
 public class GameSession {
     private ArrayList<Player> players;
     private ArrayList<Question> questions;
@@ -48,8 +49,9 @@ public class GameSession {
 
     public Question nextQuestion() {
         //TODO find a logical way to signal the end of the questions
-        if (gameHasFinished())
+        if (gameHasFinished()){
             return new Question("Runde zu Ende!");
+        }
         Question thisQuestion = questions.get(currentQuestionIndex);
         currentQuestionIndex++;
 

@@ -18,8 +18,8 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainMenu extends AppCompatActivity {
-    private ArrayList<EditText> playerFieds;
+public class GameSettings extends AppCompatActivity {
+    private ArrayList<EditText> playerFields;
     private ArrayList<String> playerNames;
     public static final String PLAYER_NAMES = "de.joshuarosenberger.busfahrer.PLAYER_NAMES";
 
@@ -28,16 +28,17 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_game_settings);
 
-        playerFieds = new ArrayList<EditText>();
+        playerFields = new ArrayList<EditText>();
         playerNames = new ArrayList<String>();
 
-        final Intent i = new Intent(this, GameActivity.class);
+        final Intent i = new Intent(this, Game.class);
         final Context context = getApplicationContext();
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.btn_start_game);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -49,50 +50,19 @@ public class MainMenu extends AppCompatActivity {
                     i.putExtra("nameBundle", bundle);
                     startActivity(i);
                 } else {
-                    displyToast("Nicht genügend Spieler! (min 3)");
+                    displayToast("Nicht genügend Spieler! (min 3)");
                 }
-
-
-
-
-
             }
         });
 
-
         addPlayerAddField();
         addPlayerAddField();
         addPlayerAddField();
         addPlayerAddField();
-        addPlayerAddField();
-
-
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main_menu, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 
     private void addPlayerAddField() {
-        final LinearLayout playerListLayout = (LinearLayout) findViewById(R.id.playersLinearLayout);
+        final LinearLayout playerListLayout = (LinearLayout) findViewById(R.id.player_menue);
         final LinearLayout playerField = new LinearLayout(this);
         playerField.setOrientation(LinearLayout.HORIZONTAL);
         playerField.setPadding(100,0,0,0);
@@ -103,7 +73,7 @@ public class MainMenu extends AppCompatActivity {
         nameField.setTextColor(getResources().getColor(R.color.colorText));
         nameField.setHintTextColor(getResources().getColor(R.color.colorTextHint));
         nameField.getBackground().setColorFilter(getResources().getColor(R.color.colorPrimaryDark), PorterDuff.Mode.SRC_IN);
-        playerFieds.add(nameField);
+        playerFields.add(nameField);
         playerField.addView(nameField);
 
         ImageButton removeBtn = new ImageButton(this);
@@ -114,15 +84,13 @@ public class MainMenu extends AppCompatActivity {
         removeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                playerFieds.remove(nameField);
+                playerFields.remove(nameField);
                 playerListLayout.removeView(playerField);
             }
         });
         playerField.addView(removeBtn);
 
         playerListLayout.addView(playerField);
-
-
     }
 
     public void onAddPlayerClicked(View view) {
@@ -132,7 +100,7 @@ public class MainMenu extends AppCompatActivity {
     private void createPlayerNameList() {
         playerNames = new ArrayList<String>();
         for (EditText t:
-             playerFieds) {
+                playerFields) {
             if (t.getText().length() > 0) {
                 System.out.println(t.getText().toString());
                 playerNames.add(t.getText().toString());
@@ -140,7 +108,7 @@ public class MainMenu extends AppCompatActivity {
         }
     }
 
-    private void displyToast(String message) {
+    private void displayToast(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }
 }

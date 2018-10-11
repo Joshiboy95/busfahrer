@@ -1,7 +1,6 @@
 package de.joshuarosenberger.busfahrer;
 
 import android.annotation.SuppressLint;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
@@ -9,6 +8,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.MenuItem;
 import android.support.v4.app.NavUtils;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -18,18 +18,12 @@ import de.joshuarosenberger.busfahrer.framework.Player;
 import de.joshuarosenberger.busfahrer.framework.Question;
 import de.joshuarosenberger.busfahrer.framework.QuestionGenerator;
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
  */
 public class GameActivity extends AppCompatActivity {
     private GameSession game;
     private ArrayList<Player> players;
     private ArrayList<Question> questions;
 
-    /**
-     * Whether or not the system UI should be auto-hidden after
-     * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
      */
     private static final boolean AUTO_HIDE = true;
 
@@ -54,7 +48,6 @@ public class GameActivity extends AppCompatActivity {
 
             // Note that some of these constants are new as of API 16 (Jelly Bean)
             // and API 19 (KitKat). It is safe to use them, as they are inlined
-            // at compile-time and do nothing on earlier devices.
             mContentView.setSystemUiVisibility(View.SYSTEM_UI_FLAG_LOW_PROFILE
                     | View.SYSTEM_UI_FLAG_FULLSCREEN
                     | View.SYSTEM_UI_FLAG_LAYOUT_STABLE
@@ -100,20 +93,10 @@ public class GameActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_game);
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }
-
-        mVisible = true;
-        mControlsView = findViewById(R.id.fullscreen_content_controls);
-        mContentView = findViewById(R.id.fullscreen_content);
 
 
         // Set up the user interaction to manually show or hide the system UI.
-        mContentView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 toggle();
@@ -129,14 +112,10 @@ public class GameActivity extends AppCompatActivity {
         ArrayList<String> names = getIntent().getBundleExtra("nameBundle").getStringArrayList(MainMenu.PLAYER_NAMES);
 
         questions = new QuestionGenerator(names.size(),1).getQuestions();
+        questions = new QuestionGenerator(names.size(), 1).getQuestions();
         game = new GameSession(names, questions);
 
-
         TextView te = (TextView) findViewById(R.id.fullscreen_content);
-        te.setText(game.nextQuestion().getText());
-
-
-
 
     }
 
@@ -146,16 +125,8 @@ public class GameActivity extends AppCompatActivity {
 
         // Trigger the initial hide() shortly after the activity has been
         // created, to briefly hint to the user that UI controls
-        // are available.
-        delayedHide(100);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == android.R.id.home) {
-            // This ID represents the Home or Up button.
-            NavUtils.navigateUpFromSameTask(this);
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -190,22 +161,7 @@ public class GameActivity extends AppCompatActivity {
                 | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION);
         mVisible = true;
 
-        // Schedule a runnable to display UI elements after a delay
-        mHideHandler.removeCallbacks(mHidePart2Runnable);
-        mHideHandler.postDelayed(mShowPart2Runnable, UI_ANIMATION_DELAY);
-    }
-
-    /**
-     * Schedules a call to hide() in delay milliseconds, canceling any
-     * previously scheduled calls.
-     */
-    private void delayedHide(int delayMillis) {
-        mHideHandler.removeCallbacks(mHideRunnable);
-        mHideHandler.postDelayed(mHideRunnable, delayMillis);
-    }
-
-    public void onNextBtnClicked(View view) {
-        TextView te = (TextView) findViewById(R.id.fullscreen_content);
-        te.setText(game.nextQuestion().getText());
+    public void onNewGameBtnClicked(View view)  {
+        finish();
     }
 }

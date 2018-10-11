@@ -5,20 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0099cc"
-    tools:context="de.joshuarosenberger.busfahrer.Game">
+    tools:context="de.joshuarosenberger.busfahrer.GameIsOver">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
          TextureView, etc. -->
 
     <TextView
-        android:id="@+id/fullscreen_content"
+        android:id="@+id/fullscreen_content_2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/colorBackground"
         android:gravity="center"
         android:keepScreenOn="true"
-        android:text="@string/dummy_content"
+        android:text="Spiel zu Ende!"
         android:textColor="@color/colorAccent"
         android:textSize="50sp"
         android:textStyle="bold" />
@@ -36,7 +36,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/btn_next"
+                android:id="@+id/btn_new_game"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,19 +47,19 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:lineSpacingExtra="18sp"
-                android:onClick="onNextBtnClicked"
+                android:onClick="onNewGameBtnClicked"
                 android:padding="8dp"
-                android:text="Weiter"
+                android:text="neues Spiel"
                 android:textColor="@color/colorText"
                 android:typeface="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                tools:text="Weiter" />
+                tools:text="neues Spiel" />
         </android.support.constraint.ConstraintLayout>
 
         <LinearLayout
-            android:id="@+id/fullscreen_content_controls"
+            android:id="@+id/fullscreen_content_controls_2"
             style="?metaButtonBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

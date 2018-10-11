@@ -6,11 +6,11 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".MainMenu"
-    tools:showIn="@layout/activity_main_menu">
+    tools:context=".GameSettings"
+    tools:showIn="@layout/activity_game_settings">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_add_player"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
@@ -42,13 +42,13 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
-                android:id="@+id/playersLinearLayout"
+                android:id="@+id/player_menue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/questionTextView"
+                    android:id="@+id/textview_newGame"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
