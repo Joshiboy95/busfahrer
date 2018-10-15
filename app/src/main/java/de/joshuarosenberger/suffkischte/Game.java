@@ -41,6 +41,7 @@ public class Game extends AppCompatActivity {
         if(game.gameHasFinished()){
             final Intent gameisover = new Intent(this, GameIsOver.class);
             startActivity(gameisover);
+            finish();
         }else {
             TextView te = (TextView) findViewById(R.id.fullscreen_content);
             te.setText(game.nextQuestion().getText());

@@ -25,6 +25,7 @@ public class CreateGame extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_create_game);
+        overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
 
         playerFields = new ArrayList<EditText>();
         playerNames = new ArrayList<String>();

@@ -19,6 +19,7 @@ public class GameIsOver extends AppCompatActivity {
     public void onNewGameBtnClicked(View view) {
         final Intent mainpage = new Intent(this, CreateGame.class);
         startActivity(mainpage);
+        finish();
     }
 }
 
