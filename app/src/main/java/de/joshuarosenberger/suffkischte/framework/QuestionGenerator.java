@@ -67,6 +67,7 @@ public class QuestionGenerator {
             questions.add(new Question("Verteile so viele Schlücke wie Personen am Tisch"));
             questions.add(new Question("Alle Frauen trinken!"));
             questions.add(new Question("Alle Männer Trinken!"));
+            //questions.add(new Question(Question.PASSIVE_PLACEHOLDER + " und " + Question.PASSIVE_PLACEHOLDER + " müssen Oberteile tauschen!"));
             questions.add(new Question(Question.ACTIVE_PLACEHOLDER + " mach jedem am Tisch ein Kompliment!"));
             questions.add(new Question("Wasserfall! " + Question.ACTIVE_PLACEHOLDER
                     + " beginnt aber " + Question.PASSIVE_PLACEHOLDER + " darf sich die Richtung aussuchen!"));
