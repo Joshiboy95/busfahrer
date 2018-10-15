@@ -1,4 +1,4 @@
-package de.joshuarosenberger.busfahrer.framework.exceptions;
+package de.joshuarosenberger.suffkischte.framework.exceptions;
 
 
 public class NotEnoughPlayersException extends Exception {

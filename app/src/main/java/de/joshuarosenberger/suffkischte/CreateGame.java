@@ -1,4 +1,4 @@
-package de.joshuarosenberger.busfahrer;
+package de.joshuarosenberger.suffkischte;
 
 import android.content.Context;
 import android.content.Intent;
@@ -7,10 +7,8 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.Window;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -18,25 +16,22 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class GameSettings extends AppCompatActivity {
+public class CreateGame extends AppCompatActivity {
     private ArrayList<EditText> playerFields;
     private ArrayList<String> playerNames;
-    public static final String PLAYER_NAMES = "de.joshuarosenberger.busfahrer.PLAYER_NAMES";
+    public static final String PLAYER_NAMES = "de.joshuarosenberger.suff_kischte.PLAYER_NAMES";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_game_settings);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setContentView(R.layout.activity_game_settings);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        setContentView(R.layout.activity_create_game);
 
         playerFields = new ArrayList<EditText>();
         playerNames = new ArrayList<String>();
 
         final Intent i = new Intent(this, Game.class);
         final Context context = getApplicationContext();
-
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.btn_start_game);
         fab.setOnClickListener(new View.OnClickListener() {

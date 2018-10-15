@@ -1,4 +1,4 @@
-package de.joshuarosenberger.busfahrer;
+package de.joshuarosenberger.suffkischte;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("de.joshuarosenberger.busfahrer", appContext.getPackageName());
+        assertEquals("de.joshuarosenberger.suff_kischte", appContext.getPackageName());
     }
 }

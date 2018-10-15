@@ -1,9 +1,9 @@
-package de.joshuarosenberger.busfahrer;
+package de.joshuarosenberger.suffkischte;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import de.joshuarosenberger.busfahrer.framework.Player;
+import de.joshuarosenberger.suffkischte.framework.Player;
 
 import static org.junit.Assert.*;
 

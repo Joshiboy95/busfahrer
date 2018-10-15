@@ -1,4 +1,4 @@
-package de.joshuarosenberger.busfahrer.framework;
+package de.joshuarosenberger.suffkischte.framework;
 
 /**
  * A Player has a name and some statistics of him during a single game session.

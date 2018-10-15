@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".GameSettings"
-    tools:showIn="@layout/activity_game_settings">
+    tools:context=".CreateGame"
+    tools:showIn="@layout/activity_create_game">
 
     <Button
         android:id="@+id/btn_add_player"

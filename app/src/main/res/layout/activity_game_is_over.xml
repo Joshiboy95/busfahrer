@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0099cc"
-    tools:context="de.joshuarosenberger.busfahrer.GameIsOver">
+    tools:context="de.joshuarosenberger.suffkischte.GameIsOver">
 
     <!-- The primary full-screen view. This can be replaced with whatever view
          is needed to present your content, e.g. VideoView, SurfaceView,
@@ -19,7 +19,7 @@
         android:gravity="center"
         android:keepScreenOn="true"
         android:text="Spiel zu Ende!"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/colorTextQuestion"
         android:textSize="50sp"
         android:textStyle="bold" />
 

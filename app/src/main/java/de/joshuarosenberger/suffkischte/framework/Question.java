@@ -1,4 +1,4 @@
-package de.joshuarosenberger.busfahrer.framework;
+package de.joshuarosenberger.suffkischte.framework;
 
 import java.util.ArrayList;
 

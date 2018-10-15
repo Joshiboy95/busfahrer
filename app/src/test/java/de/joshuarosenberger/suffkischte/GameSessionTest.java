@@ -1,15 +1,14 @@
-package de.joshuarosenberger.busfahrer;
+package de.joshuarosenberger.suffkischte;
 
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.ArrayList;
 
-import de.joshuarosenberger.busfahrer.framework.GameSession;
-import de.joshuarosenberger.busfahrer.framework.Player;
-import de.joshuarosenberger.busfahrer.framework.Question;
-import de.joshuarosenberger.busfahrer.framework.QuestionGenerator;
+import de.joshuarosenberger.suffkischte.framework.GameSession;
+import de.joshuarosenberger.suffkischte.framework.Player;
+import de.joshuarosenberger.suffkischte.framework.Question;
+import de.joshuarosenberger.suffkischte.framework.QuestionGenerator;
 
 import static org.junit.Assert.*;
 

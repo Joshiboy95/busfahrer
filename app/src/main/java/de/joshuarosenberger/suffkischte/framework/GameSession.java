@@ -1,4 +1,4 @@
-package de.joshuarosenberger.busfahrer.framework;
+package de.joshuarosenberger.suffkischte.framework;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -17,7 +17,8 @@ public class GameSession {
         this.players = createPlayerList(players);
         this.questions = questions;
         //Sets the amount of questions to the max. by default
-        maxGameLength = questions.size();
+        //maxGameLength = questions.size();
+        maxGameLength = 6;
     }
 
     public GameSession(ArrayList<Question> questions) {
