@@ -17,15 +17,8 @@ public class GameSession {
         this.players = createPlayerList(players);
         this.questions = questions;
         //Sets the amount of questions to the max. by default
-        //maxGameLength = questions.size();
-        maxGameLength = 6;
-    }
-
-    public GameSession(ArrayList<Question> questions) {
-        this.players = new ArrayList<Player>();
-        this.questions = questions;
-        //Sets the amount of questions to the max. by default
         maxGameLength = questions.size();
+        //maxGameLength = 6;
     }
 
     public void addPlayer(String name) {
