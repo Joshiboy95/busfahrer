@@ -42,7 +42,7 @@
                 android:onClick="onNextBtnClicked"
                 android:padding="8dp"
                 android:text="@string/btn_NextQuestion"
-                android:textColor="@color/colorText"
+                android:textColor="@color/colorBackground"
                 android:typeface="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

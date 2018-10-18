@@ -9,6 +9,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -33,7 +34,7 @@ public class CreateGame extends AppCompatActivity {
         final Intent i = new Intent(this, Game.class);
         final Context context = getApplicationContext();
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.btn_start_game);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.btn_start_game_fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -60,7 +61,7 @@ public class CreateGame extends AppCompatActivity {
         final LinearLayout playerListLayout = (LinearLayout) findViewById(R.id.player_menue);
         final LinearLayout playerField = new LinearLayout(this);
         playerField.setOrientation(LinearLayout.HORIZONTAL);
-        playerField.setPadding(100,0,0,0);
+        playerField.setPadding(0,0,0,0);
 
         final EditText nameField = new EditText(this);
         nameField.setHint("Name");
@@ -105,5 +106,19 @@ public class CreateGame extends AppCompatActivity {
 
     private void displayToast(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
+    }
+
+    public void start_game(View view) {
+        final Intent i = new Intent(this, Game.class);
+        createPlayerNameList();
+
+        if (playerNames.size() >= 3) {
+            Bundle bundle = new Bundle();
+            bundle.putStringArrayList(PLAYER_NAMES, playerNames);
+            i.putExtra("nameBundle", bundle);
+            startActivity(i);
+        } else {
+            displayToast("Nicht genügend Spieler! (min 3)");
+        }
     }
 }

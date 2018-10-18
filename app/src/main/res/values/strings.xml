@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">SuffKischte</string>
     <string name="title_activity_game">GameActivity</string>
+    <string name="btn_StartGame">Durscht!</string>
     <string name="btn_NextQuestion">Weiter</string>
     <string name="btn_NewGame">neues Spiel</string>
 
