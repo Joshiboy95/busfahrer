@@ -16,7 +16,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="40dp"
         android:text="Neues Spiel"
-        android:textColor="@android:color/background_light"
+        android:textColor="@color/colorText"
         android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -24,6 +24,7 @@
 
     <Button
         android:id="@+id/btn_add_player"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -32,6 +33,7 @@
         android:onClick="onAddPlayerClicked"
         android:text="Spieler hinzufügen"
         android:textAllCaps="true"
+        android:textColor="@color/colorBackground"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -72,11 +74,13 @@
 
     <Button
         android:id="@+id/btn_start_game"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
         android:onClick="start_game"
         android:text="@string/btn_StartGame"
+        android:textColor="@color/colorBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />

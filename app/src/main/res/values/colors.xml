@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#ffffff</color>
-    <color name="colorPrimaryDark">#a6414141</color>
-    <color name="colorAccent">#dcffffff</color>
+    <color name="colorPrimary">#4d2400</color>
+    <color name="colorPrimaryDark">#827e7e7e</color>
+    <color name="colorAccent">#4d2400</color>
     <color name="colorTransparent">#00969696</color>
-    <color name="colorBackground">#000000</color>
-    <color name="colorText">#ffffff</color>
-    <color name="colorTextHint">#e39c9c9c</color>
-    <color name="colorTextQuestion">#ffffff</color>
+    <color name="colorBackground">#FFD651</color>
+    <color name="colorText">#4d2400</color>
+    <color name="colorTextHint">#e3747474</color>
+    <color name="colorTextQuestion">#4d2400</color>
     <color name="black_overlay">#00000000</color>
 </resources>
